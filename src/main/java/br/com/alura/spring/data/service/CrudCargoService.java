@@ -12,14 +12,14 @@ public class CrudCargoService {
 	
 	private Boolean system = true;
 	private final CargoRepository cargoRepository;
+	
 	public CrudCargoService(CargoRepository cargoRepository) {
 		this.cargoRepository = cargoRepository;
 	}
 	
 	public void inicial(Scanner scanner) {
-		
 		while(system) {
-			System.out.println("Qual ação de cargo deseja executar?");
+			System.out.println("Qual acao de cargo deseja executar");
 			System.out.println("0 - Sair");
 			System.out.println("1 - Salvar");
 			System.out.println("2 - Atualizar");
@@ -27,7 +27,7 @@ public class CrudCargoService {
 			System.out.println("4 - Deletar");
 			
 			int action = scanner.nextInt();
-
+			
 			switch (action) {
 			case 1:
 				salvar(scanner);
@@ -40,35 +40,36 @@ public class CrudCargoService {
 				break;
 			case 4:
 				deletar(scanner);
+				break;
 			default:
 				system = false;
 				break;
 			}
+			
 		}
 		
-		salvar(scanner);
 	}
 	
 	private void salvar(Scanner scanner) {
-		System.out.println("Descrição do cargo ");
+		System.out.println("Descricao do cargo");
 		String descricao = scanner.next();
 		Cargo cargo = new Cargo();
 		cargo.setDescricao(descricao);
 		cargoRepository.save(cargo);
-		System.out.println("Salvo!\n");
+		System.out.println("Salvo");
 	}
 	
 	private void atualizar(Scanner scanner) {
 		System.out.println("Id");
 		int id = scanner.nextInt();
-		System.out.println("Descrição do Cargo");
-		String descrição = scanner.next();
+		System.out.println("Descricao do Cargo");
+		String descricao = scanner.next();
 		
 		Cargo cargo = new Cargo();
 		cargo.setId(id);
-		cargo.setDescricao(descrição);
+		cargo.setDescricao(descricao);
 		cargoRepository.save(cargo);
-		System.out.println("Atualizado!\n");
+		System.out.println("Atualizado");
 	}
 	
 	private void visualizar() {
@@ -80,6 +81,7 @@ public class CrudCargoService {
 		System.out.println("Id");
 		int id = scanner.nextInt();
 		cargoRepository.deleteById(id);
-		System.out.println("Deletado!\n");
+		System.out.println("Deletado");
 	}
+	
 }

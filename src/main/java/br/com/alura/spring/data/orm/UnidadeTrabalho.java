@@ -44,4 +44,10 @@ public class UnidadeTrabalho {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
+	@Override
+	public String toString() {
+		return "UnidadeTrabalho [id=" + id + ", descricao=" + descricao + ", endereco=" + endereco + ", funcionarios="
+				+ funcionarios + "]";
+	}
 }

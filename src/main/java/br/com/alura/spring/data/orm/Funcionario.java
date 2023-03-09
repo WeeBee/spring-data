@@ -73,4 +73,13 @@ public class Funcionario {
 	public Integer getId() {
 		return id;
 	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Funcionario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", salario=" + salario
+				+ ", dataContratacao=" + dataContratacao + ", cargo=" + cargo + ", unidadeTrabalhos=" + unidadeTrabalhos
+				+ "]";
+	}
 }
